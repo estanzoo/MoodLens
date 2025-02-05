@@ -44,8 +44,6 @@ label_map = {"0":"ANGRY","1":"HAPPY","2":"SAD","3":"SURPRISE","4":"NEUTRAL"}
 #Load the 68 face Landmark file
 predictor = dlib.shape_predictor('./shape_predictor_68_face_landmarks.dat')
 
-
-
 def landmarks_edist(face_landmarks):
     e_dist = []
     for i,j  in itertools.combinations(range(68), 2):
@@ -87,10 +85,7 @@ X_test_cnn = X_test.reshape(len(X_test),height,width)
 X_train_cnn = np.expand_dims(X_train_cnn,3)
 X_test_cnn = np.expand_dims(X_test_cnn,3)
 
-#@title Instructor Solution
-
 # pedagogically, it's probably a good idea to not use this model, but it's nice to have in case
-# comparing the basic model above with transfer learning more clearly motivates that approach
 
 cnn_model = Sequential()
 
